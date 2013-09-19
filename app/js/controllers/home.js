@@ -4,13 +4,14 @@ NGT.controller('homeCtrl', function($scope, angularFire) {
 	$scope.tweets = [];
 
 	$scope.saveTweet = function() {
-		if($scope.newTweet !== '' && $scope.newTweet !== undefined) {
+		if($scope.newTweetMessage !== '' && $scope.newTweetMessage !== undefined) {
 			$scope.tweets.push({
-				user: 'mauriciosoares',
-				tweet: $scope.newTweet
+				id: $scope.tweets.length,
+				user: $scope.newTweetUser,
+				tweet: $scope.newTweetMessage
 			});
 
-			$scope.newTweet = '';
+			$scope.newTweetMessage = '';
 		}
 	};
 

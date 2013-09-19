@@ -1,6 +1,7 @@
 <div class="col-lg-4">
 	<form ng-submit="saveTweet()" class="form-signin">
-        <input type="text" class="form-control" placeholder="Tweet Something" ng-model="newTweet" />
+		<input type="text" class="form-control" placeholder="What is your name?" ng-model="newTweetUser" />
+        <input type="text" class="form-control" placeholder="Tweet Something" ng-model="newTweetMessage" />
         <input type="submit" class="btn btn-lg btn-primary btn-block" value="Tweet" />
     </form>
 </div>
@@ -10,10 +11,10 @@
 			<div class="col-lt-12">
 				<input type="text" class="form-control" placeholder="Find a Tweet" ng-model="filterTweet">
 			</div>
-			<div class="col-lt-12" ng-repeat="tweet in tweets | filter:filterTweet | orderBy:'id':'reverse'">
+			<a class="col-lt-12" ng-repeat="tweet in tweets | filter:filterTweet | orderBy:'id':'reverse'" href="#/tweet/{{$index}}">
 				<h4>{{tweet.user}}</h4>
 				<p>{{tweet.tweet}}</p>
-			</div>
+			</a>
 		</div>
 	</div>
 </div>
