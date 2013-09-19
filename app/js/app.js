@@ -6,4 +6,4 @@
 
 'use strict';
 
-var ngt = angular.module('NGT', []);
+var NGT = angular.module('NGT', ['firebase']);
