@@ -11,7 +11,7 @@
 			<div class="col-lt-12">
 				<input type="text" class="form-control" placeholder="Find a Tweet" ng-model="filterTweet">
 			</div>
-			<a class="col-lt-12" ng-repeat="tweet in tweets | filter:filterTweet | orderBy:'id':'reverse'" href="#/tweet/{{$index}}">
+			<a class="col-lt-12" ng-repeat="tweet in tweets | filter:filterTweet | orderBy:'id':'reverse'" href="#/tweet/{{tweet.id}}">
 				<h4>{{tweet.user}}</h4>
 				<p>{{tweet.tweet}}</p>
 			</a>

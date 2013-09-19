@@ -1,5 +1,5 @@
-NGT.controller('homeCtrl', function($scope, angularFire) {
-	var ref = new Firebase('https://angular-tweets.firebaseio.com/tweets');
+APP.controller('homeCtrl', function($scope, firebaseFactory) {
+	var ref = firebaseFactory.instance('https://angular-tweets.firebaseio.com/tweets');
 
 	$scope.tweets = [];
 
@@ -15,5 +15,5 @@ NGT.controller('homeCtrl', function($scope, angularFire) {
 		}
 	};
 
-	angularFire(ref, $scope, 'tweets');
+	firebaseFactory.angularFireInit(ref, $scope, 'tweets');
 });
