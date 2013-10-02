@@ -1,5 +1,14 @@
-APP.controller('homeCtrl', function($scope, firebaseFactory) {
+APP.controller('homeCtrl', function($scope, firebaseFactory, angularFireAuth) {
 	var ref = firebaseFactory.instance('https://angular-tweets.firebaseio.com/tweets');
+
+    angularFireAuth.initialize(ref, {scope: $scope, name: "user"});
+
+    $scope.login = function() {
+        angularFireAuth.login("facebook");
+    };
+    $scope.logout = function() {
+        angularFireAuth.logout();
+    };
 
 	$scope.tweets = [];
 

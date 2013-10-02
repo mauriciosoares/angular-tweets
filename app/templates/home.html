@@ -1,3 +1,10 @@
+<div>
+    <span ng-show="user">
+      {{user.name}} | <a ng-click="logout()">Logout</a>
+    </span>
+    <span ng-hide="user"><a ng-click="login()">Login</a></span>
+</div>
+
 <div class="col-lg-4">
 	<form ng-submit="saveTweet()" class="form-signin">
 		<input type="text" class="form-control" placeholder="What is your name?" ng-model="newTweetUser" />
